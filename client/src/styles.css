@@ -52,8 +52,34 @@ input { font: inherit; }
 .composer input { flex: 1; padding: 10px 14px; border: 0; border-radius: 8px; outline: none; }
 .composer button { border: 0; border-radius: 8px; background: #00a884; color: #fff; padding: 0 18px; }
 .composer button:disabled { opacity: .5; }
+.composer .attach { background: none; color: #54656f; font-size: 20px; padding: 0 6px; }
+.back { display: none; font-size: 20px; }
+.header-info { flex: 1; min-width: 0; }
+.header-info .status { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.avatar.group { background: #cfe9e2; font-size: 18px; }
+.bubble { flex-direction: column; align-items: stretch; gap: 4px; }
+.bubble-body { display: flex; gap: 8px; align-items: flex-end; justify-content: space-between; }
+.sender { font-size: 12.5px; font-weight: 600; color: #06cf9c; }
+.att-img { max-width: 280px; max-height: 300px; border-radius: 6px; display: block; }
+.att-file { display: flex; gap: 8px; align-items: center; padding: 8px; background: rgba(0,0,0,.05); border-radius: 6px; color: inherit; text-decoration: none; }
+.att-file span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
+.att-file small { color: #667781; }
+.ticks.failed { color: #d93025; }
+.chat-error { background: #fdecea; color: #d93025; padding: 6px 16px; font-size: 14px; cursor: pointer; }
+
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.4); display: grid; place-items: center; z-index: 10; }
+.modal { background: #fff; border-radius: 8px; padding: 24px; width: 360px; max-width: 92vw; display: flex; flex-direction: column; gap: 12px; }
+.modal h2 { margin: 0; font-size: 18px; }
+.modal > input { padding: 10px 12px; border: 1px solid #d1d7db; border-radius: 6px; }
+.member-list { max-height: 260px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; }
+.member-list label { display: flex; gap: 8px; align-items: center; cursor: pointer; }
+.member-list small { color: #667781; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.modal-actions button { padding: 8px 16px; border: 0; border-radius: 6px; background: #00a884; color: #fff; }
+.modal-actions .secondary { background: #f0f2f5; color: #111b21; }
 
 @media (max-width: 700px) {
+  .back { display: inline-block !important; }
   .sidebar { width: 100%; }
   .app:has(.chat-header) .sidebar { display: none; }
   .app:not(:has(.chat-header)) .chat { display: none; }
