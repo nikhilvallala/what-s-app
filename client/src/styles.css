@@ -1,0 +1,61 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Segoe UI', Helvetica, Arial, sans-serif; background: #d1d7db; color: #111b21; }
+button { cursor: pointer; font: inherit; }
+input { font: inherit; }
+
+.loading, .placeholder { display: grid; place-items: center; height: 100%; color: #667781; }
+.loading { height: 100vh; }
+
+.auth { min-height: 100vh; display: grid; place-items: center; background: linear-gradient(#00a884 0 220px, #d1d7db 220px); }
+.auth-card { background: #fff; padding: 36px; border-radius: 8px; width: 340px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 2px 10px rgba(0,0,0,.15); }
+.auth-card h1 { margin: 0 0 8px; font-size: 22px; color: #00a884; text-align: center; }
+.auth-card input { padding: 10px 12px; border: 1px solid #d1d7db; border-radius: 6px; }
+.auth-card button { padding: 10px; border: 0; border-radius: 6px; background: #00a884; color: #fff; font-weight: 600; }
+.auth-card button:disabled { opacity: .6; }
+.error { color: #d93025; font-size: 14px; }
+.switch { text-align: center; font-size: 14px; margin: 4px 0 0; }
+.switch a { color: #00a884; }
+
+.app { display: flex; height: 100vh; max-width: 1400px; margin: 0 auto; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,.1); }
+.sidebar { width: 360px; border-right: 1px solid #e9edef; display: flex; flex-direction: column; }
+.side-header, .chat-header { height: 60px; background: #f0f2f5; display: flex; align-items: center; gap: 12px; padding: 0 16px; flex-shrink: 0; }
+.me-name { flex: 1; font-weight: 600; }
+.link { background: none; border: 0; color: #00a884; }
+.search { margin: 8px 12px; padding: 8px 14px; border: 0; border-radius: 8px; background: #f0f2f5; outline: none; }
+.contacts { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
+.contacts li { display: flex; gap: 12px; padding: 10px 16px; cursor: pointer; border-bottom: 1px solid #f0f2f5; }
+.contacts li:hover { background: #f5f6f6; }
+.contacts li.active { background: #f0f2f5; }
+.contacts li.empty { color: #667781; cursor: default; font-size: 14px; }
+.contact-info { flex: 1; min-width: 0; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.name { font-weight: 500; }
+.time { font-size: 12px; color: #667781; }
+.preview { font-size: 14px; color: #667781; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.preview em { color: #00a884; font-style: normal; }
+.badge { background: #25d366; color: #fff; border-radius: 10px; font-size: 12px; padding: 1px 7px; }
+
+.avatar { position: relative; width: 40px; height: 40px; border-radius: 50%; background: #dfe5e7; color: #54656f; display: grid; place-items: center; font-weight: 600; flex-shrink: 0; }
+.dot { position: absolute; right: 0; bottom: 0; width: 11px; height: 11px; border-radius: 50%; background: #25d366; border: 2px solid #fff; }
+
+.chat { flex: 1; display: flex; flex-direction: column; background: #efeae2; min-width: 0; }
+.chat-header .status { font-size: 13px; color: #667781; }
+.messages { flex: 1; overflow-y: auto; padding: 20px 60px; display: flex; flex-direction: column; gap: 4px; }
+.bubble { max-width: 65%; padding: 6px 9px 8px; border-radius: 8px; box-shadow: 0 1px .5px rgba(0,0,0,.13); display: flex; gap: 8px; align-items: flex-end; word-break: break-word; }
+.bubble.mine { align-self: flex-end; background: #d9fdd3; }
+.bubble.theirs { align-self: flex-start; background: #fff; }
+.text { white-space: pre-wrap; }
+.meta { font-size: 11px; color: #667781; white-space: nowrap; display: flex; gap: 3px; }
+.ticks.read { color: #53bdeb; }
+
+.composer { display: flex; gap: 8px; padding: 10px 16px; background: #f0f2f5; }
+.composer input { flex: 1; padding: 10px 14px; border: 0; border-radius: 8px; outline: none; }
+.composer button { border: 0; border-radius: 8px; background: #00a884; color: #fff; padding: 0 18px; }
+.composer button:disabled { opacity: .5; }
+
+@media (max-width: 700px) {
+  .sidebar { width: 100%; }
+  .app:has(.chat-header) .sidebar { display: none; }
+  .app:not(:has(.chat-header)) .chat { display: none; }
+  .messages { padding: 12px; }
+}
